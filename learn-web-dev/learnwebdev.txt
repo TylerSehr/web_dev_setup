@@ -1,0 +1,19 @@
+
+FE Building Webpages (html, css, js)
+	https://docs.microsoft.com/en-us/learn/modules/build-simple-website/
+
+BE Building APIs and Servers (node, express)
+	https://www.youtube.com/watch?v=pKd0Rpw7O48
+
+FE Intro to React (reactjs, jsx)
+	https://reactjs.org/tutorial/tutorial.html
+
+BE Working with APIs
+	https://www.youtube.com/watch?v=uxf0--uiX0I&vl=en
+	https://www.youtube.com/watch?v=t5n07Ybz7yI
+
+BE Intro to SQL (sql)
+	https://www.khanacademy.org/computing/computer-programming/sql
+	
+
+	

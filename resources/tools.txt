@@ -1,0 +1,15 @@
+User Interface DESIGN: 
+	Moqups: https://app.moqups.com/
+
+API TESTING:
+	Postman: https://www.getpostman.com/
+
+Development Environment: 
+	VSCode: https://code.visualstudio.com/
+
+Postgres Database Visualizer:
+	Postico: https://eggerapps.at/postico/ !!!Does not work on school computers!!!
+
+MongoDB Database Visualizer:
+	Robo3t: https://robomongo.org/ !!!Does not work on school computers!!!
+

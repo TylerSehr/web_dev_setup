@@ -1,0 +1,26 @@
+
+
+USE: {
+	VSCODE with autosave
+	NPM instead of yarn
+	GOOGLE CHROME ALWAYS (control click -> inspect element) -> opens debug menu
+	ES6 SYNTAX (https://www.taniarascia.com/es6-syntax-and-feature-overview/)
+}
+
+to use mongodb or postico, you may need your own computer (or run a vm)
+
+https://www.freecodecamp.org/ is also a good resource for learning web dev!
+
+Resources folder contains some other useful tools.
+
+
+
+I recommend:
+Start with running install-dependencies.sh
+then getting started with the material in learn-web-dev
+Number ranks difficulty, FE is front-end, BE is back-end, FS is fullstack
+put projects inside their corresponding folders.
+
+
+
+If you have any questions, Slack me at tsehr on the old slack or BIG SOCK on the new slack!

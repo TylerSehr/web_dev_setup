@@ -1,0 +1,12 @@
+how to set up postgresql database and use it.
+
+let username = choose your username
+let databasename = choose your database name
+
+
+createuser username
+createdb databasename
+psql databasename
+
+
+{execute pg queries here}
