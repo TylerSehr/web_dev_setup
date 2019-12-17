@@ -24,3 +24,8 @@ put projects inside their corresponding folders.
 
 
 If you have any questions, Slack me at tsehr on the old slack or BIG SOCK on the new slack!
+
+Personal Notes: 
+	Create A Webpage to track user engagement on curriculum.	
+
+

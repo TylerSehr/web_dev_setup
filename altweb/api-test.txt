@@ -1,0 +1,7 @@
+https://api.intra.42.fr/oauth/authorize?client_id=1f5986af685d4b462249978fdd32945c93618f3502137e52137c524045d2c8fa&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fauth%2Fredirect&response_type=code
+
+https://api.intra.42.fr/v2/me
+
+"Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+https://api.intra.42.fr/oauth/token?grant_type=authorization_code&client_id=1f5986af685d4b462249978fdd32945c93618f3502137e52137c524045d2c8fa&client_secret=78b34b456aba780e48cfa1917b6c10fe6de80ee24e7fcb8ea3ab3e71f52e60b9&code=f161c7e3bb61a7cdb3b0b397ddf77820c055961f35c104365b64915028ad8b7d&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fauth%2Fcallback
