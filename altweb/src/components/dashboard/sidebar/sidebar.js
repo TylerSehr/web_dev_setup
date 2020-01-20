@@ -1,49 +1,86 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import SideBarItem from './sidebaritem'
-import Sidebar from "react-sidebar";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
+import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
-	content: state.content,
-});
+	content: state.content
+})
 
-class SideBar extends React.Component {
+
+class SwipeableTemporaryDrawer extends React.Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			sideBarOpen: true
+			left: false,
+			classes: makeStyles({
+				list: {
+					width: 250,
+				},
+				fullList: {
+					width: 'auto',
+				},
+			})
 		}
 	}
 
-	onSetSidebarOpen = (open) => {
-		this.setState({ sidebarOpen: open });
-	}
 
-	render() {		
-		// console.log(this.props.content);
-		
 
-		let content = this.props.content.map((item, index) => {
-			return (
-				<SideBarItem key={index} item={item} />
-			)
-		})
+
+	toggleDrawer = (side, open) => event => {
+		if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+			return;
+		}
+
+		this.setState({ ...this.state, [side]: open });
+	};
+
+
+
+	render() {
+
+		const sideList = side => (
+			<div
+				className={this.state.classes.list}
+				role="presentation"
+				onClick={this.toggleDrawer(side, false)}
+				onKeyDown={this.toggleDrawer(side, false)}
+			>
+				<List>
+					{this.props.content.map((text, index) => (
+						<ListItem button key={index}  >
+							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+							<ListItemText primary={text.level} />
+						</ListItem>
+					))}
+				</List>
+			</div>
+		)		
 
 		return (
-			<Sidebar
-				sidebar={<b>{content}</b>}
-				open={this.state.sidebarOpen}
-				onSetOpen={this.onSetSidebarOpen}
-				styles={{ sidebar: { background: 'rgba(255,255,255,0.5)', "backdropFilter": 'blur(1.5px)'} }}
-			>
-				<button className="sidebar-button" onClick={() => this.onSetSidebarOpen(true)}>
-					=
-       			 </button>
-			</Sidebar>
-		)
+			<div>
+				<Button onClick={this.toggleDrawer('left', true)}>Menu</Button>
+				<SwipeableDrawer
+					open={this.state.left}
+					onClose={this.toggleDrawer('left', false)}
+					onOpen={this.toggleDrawer('left', true)}
+				>
+					{sideList('left')}
+				</SwipeableDrawer>
+			</div>
+		);
 	}
+
 }
 
-export default connect(mapStateToProps)(SideBar)
+export default connect(mapStateToProps)(SwipeableTemporaryDrawer)

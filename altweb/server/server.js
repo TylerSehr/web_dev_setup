@@ -9,7 +9,7 @@ const contentRouter = require('./routes/contentRouter')
 
 let ChatServer = require('./modules/chat')
 
-let chatServer = new ChatServer(server)
+// let chatServer = new ChatServer(server)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,11 +18,11 @@ app.use('/auth', authRouter)
 app.use('/feedback', feedbackRouter) // verify authentication on evertything
 app.use('/content', contentRouter)
 
-app.get('/chat', (req, res) => {
-	console.log(chatServer.chatStream);
+// app.get('/chat', (req, res) => {
+// 	console.log(chatServer.chatStream);
 	
-	res.send(chatServer.chatStream)
-})
+// 	res.send(chatServer.chatStream)
+// })
 
 
 app.use(express.static('build'))

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import axios from 'axios';
 import './dashboard.css'
 
-import Sidebar from './sidebar/sidebar'
+import SideBar from './sidebar/sidebar'
 import Header from './header/header'
 import ChatWindow from './chatWindow/chatWindow'
 
@@ -32,11 +32,12 @@ class Dashboard extends React.Component {
 
 		return (
 			<div className="dashboard">
-				{/* <Header />  */}
-				<ChatWindow />
+				<Header /> 
+				{/* <ChatWindow /> */}
 				<div >
 					{this.state.selectedCourse}
 				</div>
+			
 			</div>
 		)// fix bug with the header where input fields don't work
 	}

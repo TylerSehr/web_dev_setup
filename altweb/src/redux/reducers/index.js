@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import content from './content.reducer';
-import chat from './chat.reducer'
+// import chat from './chat.reducer'
 
 
 const store = combineReducers({
   content,
-  chat
+  // chat
 });
 
 export default store;

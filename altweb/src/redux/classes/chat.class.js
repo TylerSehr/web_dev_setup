@@ -9,13 +9,17 @@ export class ChatMessage {
 	}
 }
 
-export class ChatEngine {
+class ChatEngine {
 	constructor(){
 		this.loading = true;
 		this.socket = io()
 		this.chatHistory = []
 
 		this.getMessageHistory()
+		this.socket.on('chat-message', (message) => {
+			this.chatHistory.push(message)
+			store.dispatch({ type: 'GET_CHAT_HISTORY' })
+		})
 	}
 
 	async getMessageHistory(){
@@ -28,6 +32,12 @@ export class ChatEngine {
 	sendMessage(message){
 		console.log(message);
 		this.socket.emit('chat-message', message)
+		this.chatHistory.push(message)
+		store.dispatch({ type: 'GET_CHAT_HISTORY' })
 	}
+
 }
+
+export const chatEngine = new ChatEngine()
+
 

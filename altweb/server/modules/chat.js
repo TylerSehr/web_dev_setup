@@ -24,8 +24,13 @@ class ChatServer {
 
 			client.on('chat-message', data => {
 				console.log(this.chatStream);
+				let cookie = client.request.headers.cookie
+				let index = cookie.indexOf('intra')
+				cookie = cookie.substring(index, cookie.length)
+				index = cookie.indexOf(';')
+				cookie = cookie.substring(6, index)
 				
-				let chatMessage = new ChatMessage('message', client.request.headers.intra, data.project, data.message)
+				let chatMessage = new ChatMessage('message', cookie, data.project, data.message)
 				this.chatStream.push(chatMessage)
 				client.broadcast.emit(chatMessage)
 				if (this.chatStream.length > 200) {
